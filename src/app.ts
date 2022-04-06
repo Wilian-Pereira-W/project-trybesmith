@@ -1,4 +1,5 @@
 import express from 'express';
+import OrdersController from './controllers/OrdersController';
 import ProductsControllers from './controllers/ProductsController';
 import UsersController from './controllers/UsersController';
 import validateProduct from './middleware/validateProduct';
@@ -23,4 +24,5 @@ app.post(
   validateUser.validatePassword,
   UsersController.create,
 );
+app.get('/orders', OrdersController.getAll);
 export default app;
